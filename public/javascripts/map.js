@@ -17,7 +17,10 @@ function drawRegionsMap() {
 
   console.log(data);
 
-  var options = {};
+  var options = {
+    colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+    backgroundColor: '#81d4fa'
+  };
 
   var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
