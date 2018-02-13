@@ -7,14 +7,14 @@ const coordenates = [{
     lat: 40.4893538421231,
     lng: -3.6827461557,
     rad: 10,
-    //city: "Madrid",
+    country: "Spain",
     radUnits: "km"
   },
   {
     lat: 41.3818,
     lng: 2.1685,
     rad: 10,
-    //city: "Barcelona",
+    country: "France",
     radUnits: "km"
   }
 ];
