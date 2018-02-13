@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const coordenateSchema = new Schema({
+    country: String,
     lat: Number,
     lng: Number,
     rad: Number,

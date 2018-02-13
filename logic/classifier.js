@@ -16,6 +16,8 @@ let params = {
 }
 
 
+
+
 var twit = T.get('search/tweets', params).then( (info) => {
   var twitString = "";
    let tweets = info.data.statuses;
@@ -39,6 +41,8 @@ var twit = T.get('search/tweets', params).then( (info) => {
       if (err)
       console.log('error:', err);
     else
+    console.log("prueba");
+      console.log(response);
       console.log(JSON.stringify(response, null, 2));
   });
  });

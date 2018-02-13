@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 const resultSchema = new Schema({
     text: String,
     emotion: {name: String, value: Number},
-    country: String,
     user_id: {
         type: Schema.Types.ObjectId,
         ref: "User"
+    },
+    coordenate_id: {
+        type: Schema.Types.ObjectId,
+        ref: "Result"
     }
    
 }, {
