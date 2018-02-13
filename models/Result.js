@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const resultSchema = new Schema({
     text: String,
-    emotion: String,
+    emotion: {name: String, value: Number},
+    country: String,
     user_id: {
         type: Schema.Types.ObjectId,
         ref: "User"
