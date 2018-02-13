@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Twit = require('twit');
 const config = require('../config');
 let T = new Twit(config);
@@ -14,7 +15,6 @@ let params = {
   lang: "en",
   count: 100
 }
-
 
 var twit = T.get('search/tweets', params).then( (info) => {
   var twitString = "";
@@ -38,10 +38,9 @@ var twit = T.get('search/tweets', params).then( (info) => {
       if (err)
       console.log('error:', err);
     else
-      console.log(JSON.stringify(response, null, 2));
+    console.log(response.entities[0].text)
   });
  });
-
 
 
 
