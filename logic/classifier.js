@@ -12,7 +12,7 @@ let params = {
   q: '*', 
   geocode: "40.4893538421231,-3.6827461557,10km",
   lang: "en",
-  count: 2
+  count: 100
 }
 
 
@@ -22,7 +22,6 @@ var twit = T.get('search/tweets', params).then( (info) => {
    for(let i=0; i< tweets.length; i++){
      twitString = twitString + " " + tweets[i].text.replace(/[&\/\\#,;.+()$~%.'":*?<>{}]/g,"");
     }
-    console.log(typeof(twitString));
     return twitString;
   }).then((data) => {
     var parameters = {
