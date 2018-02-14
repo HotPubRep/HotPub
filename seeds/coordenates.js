@@ -11,10 +11,24 @@ const coordenates = [{
     radUnits: "km"
   },
   {
-    lat: 41.3818,
-    lng: 2.1685,
+    lat: 48.8588376,
+    lng: 2.2768485,
     rad: 10,
     country: "France",
+    radUnits: "km"
+  },
+  {
+    lat: 52.5065116,
+    lng: 13.1438665,
+    rad: 10,
+    country: "Germany",
+    radUnits: "km"
+  },
+  {
+    lat: 51.5285578,
+    lng: -0.2420248,
+    rad: 10,
+    country: "England",
     radUnits: "km"
   }
 ];
