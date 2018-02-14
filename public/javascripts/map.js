@@ -11,8 +11,8 @@ console.log("entro en el script");
 
 function drawRegionsMap() {
   var data = google.visualization.arrayToDataTable([
-    ['Country',result.emotion],
-    [country, result.value]
+    ['Country',result.emotion, result.name],
+    [country, result.value, 1]
   ]);
 
   console.log(data);
