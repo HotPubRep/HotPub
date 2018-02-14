@@ -6,8 +6,6 @@ google.charts.load('current', {
 });
 google.charts.setOnLoadCallback(drawRegionsMap);
 
-console.log("entro en el script");
-
 
 function drawRegionsMap() {
   var data = google.visualization.arrayToDataTable([
