@@ -11,13 +11,14 @@ console.log("entro en el script");
 
 function drawRegionsMap() {
   var data = google.visualization.arrayToDataTable([
-    ['Country','Emotion'],
-    ['Spain', 0.678]
+    ['Country',result.emotion],
+    [country, result.value]
   ]);
 
   console.log(data);
 
   var options = {
+    region: '150',
     colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
     backgroundColor: '#81d4fa'
   };
