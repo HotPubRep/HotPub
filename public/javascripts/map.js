@@ -10,11 +10,21 @@ console.log("entro en el script");
 
 
 function drawRegionsMap() {
-  var data = google.visualization.arrayToDataTable([
-    ['Country',result.emotion, result.name],
-    [country, result.value, 1]
-  ]);
 
+  var data;
+  if(country===""){
+    data = google.visualization.arrayToDataTable([
+      ['Country'],
+      [""]
+    ]);
+  }else{
+    data = google.visualization.arrayToDataTable([
+      ['Country',result.emotion, result.name],
+      [country, result.value, 1]
+    ]);
+
+  }
+  
   console.log(data);
 
   var options = {
