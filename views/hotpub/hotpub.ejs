@@ -1,10 +1,24 @@
+<div class="container">
+	<div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
 <br>
 <br>
 <br>
 <div id="regions_div" style="width: 900px; height: 500px;"></div>
-
 <script>
-
   let country = <%- JSON.stringify(country) %>;
   let result = <%- JSON.stringify(result) %>;
   console.log(country);
