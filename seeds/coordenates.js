@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Coordenate = require('../models/Coordenate');
 
-mongoose.connect("mongodb://localhost/HotPub-ironhack");
+mongoose.connect(process.env.MONGO_URL);
 
 const coordenates = [{
     lat: 40.4893538421231,

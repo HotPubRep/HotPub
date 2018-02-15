@@ -1,26 +1,26 @@
-const mongoose = require("mongoose");
-const Twit = require("twit");
-const config = require("./config");
+const mongoose = require('mongoose');
+const Twit = require('twit');
+const config = require('./config');
 let T = new Twit(config);
-var NaturalLanguageUnderstandingV1 = require("watson-developer-cloud/natural-language-understanding/v1.js");
+var NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
 var natural_language_understanding = new NaturalLanguageUnderstandingV1({
   username: process.env.USERNAME,
   password: process.env.PASSWORD,
-  version_date: process.env.VERSION_DATE
+  version_date: process.env.VERSION_DATE,
 });
 
-module.exports = (params) => {
+module.exports = params => {
   return new Promise((resolve, reject) => {
     var result;
-    T.get("search/tweets", params)
+    T.get('search/tweets', params)
       .then(info => {
-        var twitString = "";
+        var twitString = '';
         let tweets = info.data.statuses;
         for (let i = 0; i < tweets.length; i++) {
           twitString =
             twitString +
-            " " +
-            tweets[i].text.replace(/[&\/\\#,;.+()$~%.'":*?<>{}]/g, "");
+            ' ' +
+            tweets[i].text.replace(/[&\/\\#,;.+()$~%.'":*?<>{}]/g, '');
         }
         return twitString;
       })
@@ -31,9 +31,9 @@ module.exports = (params) => {
             entities: {
               emotion: true,
               sentiment: true,
-              limit: 1
-            }
-          }
+              limit: 1,
+            },
+          },
         };
 
         natural_language_understanding.analyze(parameters, function(
@@ -49,21 +49,17 @@ module.exports = (params) => {
               a = Object.values(response.entities[0].emotion)[i];
             b = Object.getOwnPropertyNames(response.entities[0].emotion)[i];
           }
-          var result;
-          result = {
+          var result = {
             name: Object.values(response.entities[0].text)
               .join()
               .toString()
-              .replace(/,/g, ""),
+              .replace(/,/g, ''),
             emotion: b,
-            value: a
+            value: a,
           };
-
-          //console.log("primera llamada");
-          //console.log(result);
-
           resolve(result);
         });
       });
   });
 };
+
