@@ -4,32 +4,31 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 centered-form">
-        <form action="/admin/coordenate/new" method="POST">
+        <form action="/admin/coordenate/view" method="POST">
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" name="country" class="form-control">
+            <input type="text" disabled="disabled" name="country" class="form-control" value="<%= coordenate.country%>" >
           </div>
           <div class="form-group">
             <label for="latitud">Latitud</label>
-            <input type="number" step=any name="latitud" class="form-control">
+            <input type="number" readonly="readonly" step=any name="latitud" class="form-control" value="<%= coordenate.lat%>">
           </div>
           <div class="form-group">
             <label for="longitud">Longitud</label>
-            <input type="number" step=any name="longitud" class="form-control"></input>
+            <input type="number" readonly="readonly" step=any name="longitud" class="form-control" value="<%= coordenate.lng%>"></input>
           </div>
           <div class="form-group">
             <label for="radio">Radio</label>
-            <input type="number" step=any name="radio" class="form-control"></input>
+            <input type="number" readonly="readonly" step=any name="radio" class="form-control" value="<%= coordenate.rad%>"></input>
           </div>
           <div class="form-group">
             <label for="radUnits">Radio units</label><br>
-            <select name="radUnits" id="radUnits">
+            <select name="radUnits" readonly="readonly" id="radUnits" value="<%= coordenate.radUnits%>">
                 <option value="km">km</option>
                 <option value="mi">mi</option>
             </select>
           </div>
           <div class="form-group">
-              <button type="submit" class="btn btn-primary">Create Coordenate</button>
           </div>
         </form>
       </div>
