@@ -13,6 +13,7 @@ const passportConfig = require('./passport')
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const hotpub = require('./routes/hotpub');
+const admin = require('./routes/admin');
 
 const {dbURL} = require('./config');
 
@@ -66,6 +67,7 @@ app.use((req,res,next)=>{
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/hotpub', hotpub);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

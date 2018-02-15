@@ -6,7 +6,7 @@ const Coordenate = require('../models/Coordenate');
 const classifier = require('../classifier');
 
 router.get('/', (req, res, next) => {
-  console.log("Usuario conectado: " + req.user.username);  
+  //console.log("Usuario conectado: " + req.user.username);  
   res.render('hotpub/hotpub', { title: 'HotPub', country: '', result:{}});
 
 });
