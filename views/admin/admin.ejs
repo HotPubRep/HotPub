@@ -1,0 +1,21 @@
+<br>
+<br>
+<h3>Admin page</H3>
+<br>
+<br>
+<% if (user) { %>
+
+  <ul>
+    <% coordenates.forEach((coordenate) => { %>
+        <li>
+        <span><%= coordenate.country %></span> 
+        <a href="/coordenate/view/<%= coordenate._id %>">View</a>
+        <a href="/coordenate/edit/<%= coordenate._id %>">Edit</a>
+        <a href="/coordenate/delete/<%= coordenate._id %>">Delete</a>
+        </li>
+    <%  }) %>
+</ul> 
+<% } %>
+<br>
+<br>
+<a href="/coordenate/new>">Add a coordenate</a>

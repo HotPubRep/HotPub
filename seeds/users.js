@@ -10,6 +10,7 @@ const password2 = "ironhack";
 
 const users = [{
     username: 'admin',
+    role: 'Admin',
     password: bcrypt.hashSync(password1, salt),
   },
   {
