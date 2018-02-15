@@ -48,6 +48,7 @@ module.exports = params => {
             if (a < Object.values(response.entities[0].emotion)[i])
               a = Object.values(response.entities[0].emotion)[i];
             b = Object.getOwnPropertyNames(response.entities[0].emotion)[i];
+            console.log(b)
           }
           var result = {
             name: Object.values(response.entities[0].text)
@@ -57,7 +58,7 @@ module.exports = params => {
             emotion: b,
             value: a,
           };
-          resolve(result);
+          resolve(result); 
         });
       });
   });

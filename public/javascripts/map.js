@@ -30,7 +30,8 @@ function drawRegionsMap() {
   var options = {
     region: '150',
     colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
-    backgroundColor: '#81d4fa'
+    backgroundColor: '#81d4fa',
+    datalessRegionColor: '#f8bbd0'
   };
 
   var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
