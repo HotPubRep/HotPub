@@ -1,8 +1,9 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const User = require('../models/User');
-mongoose.connect("mongodb://localhost/HotPub-ironhack");
+mongoose.connect(process.env.MONGO_URL);
 var salt = bcrypt.genSaltSync(bcryptSalt);
 const password1 = "ironhack";
 const password2 = "ironhack";

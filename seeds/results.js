@@ -1,9 +1,10 @@
+require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 const User = require('../models/User');
 const Result = require('../models/Result');
 const Coordenate = require('../models/Coordenate');
-mongoose.connect("mongodb://localhost/HotPub-ironhack");
+mongoose.connect(process.env.MONGO_URL);
 
 User.findOne({username:"user1"}).then((usr) => {
   const id = usr._id.toString();
@@ -46,9 +47,6 @@ User.findOne({username:"user1"}).then((usr) => {
 
 
   })
-
-
-
 })
 
 
