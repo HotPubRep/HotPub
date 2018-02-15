@@ -1,0 +1,35 @@
+<!-- views/coordenate/new.ejs -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 centered-form">
+        <form action="/coordenate/new" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="latitud">Latitud</label>
+            <input type="number" name="latitud" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="longitud">Longitud</label>
+            <textarea type="number" name="longitud" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="radio">Radio</label>
+            <textarea type="number" name="radio" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="radUnits">Radio units</label><br>
+            <select name="radUnits" id="radUnits">
+                <option value="km">km</option>
+                <option value="mi">mi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit">Create Coordenate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
