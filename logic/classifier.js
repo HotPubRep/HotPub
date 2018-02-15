@@ -55,7 +55,6 @@ var emotion = {
 })
 }
 }
-//getResult(params).then((r)=> console.log(r));
 
 module.exports = emotion; 
 
