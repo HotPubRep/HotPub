@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 centered-form">
-        <form action="/admin/coordenate/edit" method="POST">
+          <form action="/admin/coordenate/edit/<%= coordenate._id %>/" method="POST">
           <div class="form-group">
-            <label for="country">Country</label>
+            <label for="country">European Country</label>
             <input type="text" name="country" class="form-control" value="<%= coordenate.country%>" >
           </div>
           <div class="form-group">
@@ -29,7 +29,7 @@
             </select>
           </div>
           <div class="form-group">
-              <button type="submit" class="btn btn-primary">Create Coordenate</button>
+              <button type="submit" class="btn btn-primary">Update Coordenate</button>
           </div>
         </form>
       </div>
