@@ -6,10 +6,17 @@ const Coordenate = require('../models/Coordenate');
 const classifier = require('../classifier');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
-router.get('/', isLoggedIn,(req, res, next) => {
-  //console.log("Usuario conectado: " + req.user.username);  
-  res.render('hotpub/hotpub', { title: 'HotPub', country: '', result:{}});
 
+
+router.get('/', isLoggedIn,(req, res, next) => {
+  //console.log("Usuario conectado: " + req.user.username);
+  const userId = req.user.id;  
+
+  Result.find({user_id:userId}).populate('coordenate_id')
+  .then(resultByUser => { console.log(resultByUser);
+    res.render('hotpub/hotpub', { title: 'HotPub', country: '', result:'', resultsByUser:resultByUser})})
+  .catch(e => next(e));
+  
 });
 
 router.post('/', isLoggedIn, (req, res, next) => {
@@ -58,7 +65,12 @@ router.post('/', isLoggedIn, (req, res, next) => {
             });
         } else {
           console.log("guardamos correctamete");
-            res.render('hotpub/hotpub', { title: 'HotPub',  country: country , result: r });
+          Result.find({user_id:user._id}).populate('coordenate_id')
+          .then(resultByUser => { console.log(resultByUser);
+            res.render('hotpub/hotpub', { title: 'HotPub', country: country, result:r, resultsByUser:resultByUser})})
+          .catch(e => next(e));
+
+
         }
     });//fin save
 

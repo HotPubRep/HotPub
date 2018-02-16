@@ -10,7 +10,7 @@ const resultSchema = new Schema({
     },
     coordenate_id: {
         type: Schema.Types.ObjectId,
-        ref: "Result"
+        ref: "Coordenate"
     }
    
 }, {
