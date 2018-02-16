@@ -4,14 +4,15 @@ const User = require('../models/User');
 const Result = require('../models/Result');
 const Coordenate = require('../models/Coordenate');
 const classifier = require('../classifier');
+const isLoggedIn = require('../middlewares/isLoggedIn');
 
-router.get('/', (req, res, next) => {
+router.get('/', isLoggedIn,(req, res, next) => {
   //console.log("Usuario conectado: " + req.user.username);  
   res.render('hotpub/hotpub', { title: 'HotPub', country: '', result:{}});
 
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', isLoggedIn, (req, res, next) => {
   const user = req.user.username;
   const country = req.body.country;
 
