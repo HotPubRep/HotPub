@@ -1,20 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const Coordenate = require('../models/Coordenate');
+const checkAdmin = require('../middlewares/isLoggedAdmin');
 
-function checkRoles(role) {
-  return function (req, res, next) {
-    console.log(req.user.role);
-    if (req.isAuthenticated() && req.user.role === role) {
-      return next();
-    } else {
-      res.redirect('/login')
-      //return next();
-    }
-  }
-}
-
-var checkAdmin = checkRoles('Admin');
 
 /* GET admin page. */
 router.get('/', checkAdmin, function (req, res, next) {
